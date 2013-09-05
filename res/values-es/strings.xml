@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">OppiaMobile</string>
-    <string name="app_logo_alt">Digital Campus Logo</string>
+    <string name="app_name">FP Counseling</string>
+    <string name="app_logo_alt">Nurhi Logo</string>
     
     <string name="menu_download">Gestionar cursos</string>
-    <string name="menu_language">Cambiar idioma</string>
+    <string name="menu_language">Library</string>
     <string name="menu_settings">Ajustes</string>
     <string name="menu_about">Sobre</string>
     <string name="menu_help">Ayuda</string>
@@ -11,7 +11,7 @@
     <string name="menu_read_aloud">Read aloud</string>
     <string name="menu_stop_read_aloud">Stop reading</string>
     
-    <string name="service_tracker">OppiaMobile buscador de servicio</string>
+    <string name="service_tracker">Nurhi buscador de servicio</string>
     <string name="title_about">Sobre</string>
     <string name="title_help">Ayuda</string>
      
@@ -44,7 +44,7 @@
  	<string name="no_modules">No hay cursos instalados</string>
  	
  	<string name="prefServer">Servidor</string>
-	<string name="prefServerDefault">http://demo.oppia-mobile.org/</string>
+	<string name="prefServerDefault">http://220.226.2.31:83/</string>
 	<string name="prefLanguage">Idioma preferido</string>
 	<string name="prefAdvanced">Configuración avanzada</string>
 	
@@ -114,7 +114,7 @@
 	<string name="scan_media_download_via_pc_button">Descarga vía PC</string>
 	
 	<string name="error_connection">Error conectando al servidor</string>
-	<string name="error_connection_required">You need an active internet connection to access this page. Please turn on wifi or mobile internet connection and try again.</string>
+	<string name="error_connection_required1">You need an active internet connection to access this page. Please turn on wifi or mobile internet connection and try again.</string>
 	<string name="error_processing_response">Error procesando respuesta</string>
 	<string name="error_no_username">Porfavor, introduzca un usuario</string>
 	<string name="error_installing_module">%1$s: no se pudo instalar</string>

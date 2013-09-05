@@ -2,11 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+     >
 
-    <org.digitalcampus.mobile.learning.application.Header
+    <openwave.nurhi.mobile.learning.application.Header
         android:id="@+id/header"
         style="@style/Header" />
+
+    <Button
+        android:id="@+id/scores_help"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Score Guide" />
 
      <WebView
         android:id="@+id/scorecard_webview"

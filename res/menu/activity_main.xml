@@ -1,5 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_download"
+       <item android:id="@+id/menu_download"
         android:title="@string/menu_download"
         android:orderInCategory="100" 
         android:icon="@android:drawable/ic_menu_add"/>
@@ -12,7 +12,7 @@
         android:orderInCategory="100" 
         android:icon="@android:drawable/ic_menu_preferences"/>
     <item android:id="@+id/menu_about"
-        android:title="@string/menu_about"
+        android:title="Tracker"
         android:orderInCategory="100"
         android:icon="@android:drawable/ic_menu_info_details" />
     <item android:id="@+id/menu_help"

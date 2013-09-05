@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/flashscreen1"
+    android:orientation="vertical"
+    android:paddingBottom="30dp" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Nurhi_Ver_1.7"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
+       

@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <org.digitalcampus.mobile.learning.application.Header
+    <openwave.nurhi.mobile.learning.application.Header
         android:id="@+id/header"
         style="@style/Header" />
 
@@ -57,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:padding="5dp"
+                
                 style="@style/FieldText" />
 
             <Button
@@ -65,6 +66,9 @@
                 android:layout_height="wrap_content"
                 android:onClick="onLoginClick"
                 android:text="@string/title_login"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
                 style="@style/ButtonText"  />
 
             <Button
@@ -73,6 +77,8 @@
                 android:layout_height="wrap_content"
                 android:onClick="onRegisterClick"
                 android:text="@string/title_register"
+                 android:layout_marginLeft="30dp"
+                  android:layout_marginRight="30dp"
                 style="@style/ButtonText" />
         </LinearLayout>
     </ScrollView>
