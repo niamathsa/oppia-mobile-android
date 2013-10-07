@@ -6,6 +6,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
+        android:visibility="gone"
         android:text="@string/schedule_reminders"
         android:textSize="16sp"/>
     
@@ -16,6 +17,7 @@
         android:listSelector="@drawable/background_change_pressed" 
         android:divider="@drawable/list_divider_light"
         android:dividerHeight="1dp"
+           android:visibility="gone"
         android:cacheColorHint="#00000000"/>
 
 </merge>

@@ -25,7 +25,6 @@ import openwave.nurhi.mobile.learning.task.APIRequestTask;
 import openwave.nurhi.mobile.learning.task.Payload;
 import openwave.nurhi.mobile.learning.task.SubmitMQuizTask;
 import openwave.nurhi.mobile.learning.task.SubmitTrackerMultipleTask;
-
 import openwave.nurhi.mobile.learning.R;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -81,7 +80,7 @@ public class TrackerService extends Service implements APIRequestListener{
 			prefs = PreferenceManager.getDefaultSharedPreferences(this);
 			long lastRun = prefs.getLong("lastModuleUpdateCheck", 0);
 			long now = System.currentTimeMillis()/1000;
-			if((lastRun + (3600*12)) < now){
+			if((lastRun + (150*12)) < now){   //3600   change 150
 				APIRequestTask task = new APIRequestTask(this);
 				p = new Payload(MobileLearning.SERVER_COURSES_PATH);
 				task.setAPIRequestListener(this);
@@ -134,7 +133,7 @@ public class TrackerService extends Service implements APIRequestListener{
 	public void apiRequestComplete(Payload response) {
 		DbHelper db = new DbHelper(this);
 		Log.d(TAG,"completed getting module list");
-		
+	
 		boolean updateAvailable = false;
 		try {
 			JSONObject json = new JSONObject(response.getResultResponse());

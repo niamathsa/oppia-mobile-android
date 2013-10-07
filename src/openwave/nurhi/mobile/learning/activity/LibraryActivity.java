@@ -1,8 +1,6 @@
 package openwave.nurhi.mobile.learning.activity;
 
 import java.io.File;
-import java.util.ArrayList;
-
 import openwave.nurhi.mobile.learning.R;
 import net.sf.andpdf.pdfviewer.PdfViewerActivity;
 import android.app.Activity;
@@ -27,11 +25,11 @@ public class LibraryActivity extends Activity {
 
 	private TextView txtScreenTitle;
 	private ListView listViewForLib;
-	private String listValues[] = new String[] { "MEC Chart",
-			"FP/RH Protocols", "OJT Manual", "GATHER 3", "FAQs", "ACE" }; // "MEC",
-	private String listGatherPDFs[] = new String[] { "nationalservice.pdf",
-			"quickreference.pdf.pdf", " nationalservice.pdf",
-			"gathercue_card_non_clinical.pdf" };
+	private String listValues[] = new String[] { "Medical Eligibility Criteria Chart","Balanced Counseling Strategy Plus",
+			"FP/RH Protocols", "OJT FP Handouts", "GATHER", "FAQs", "App for Contraceptive Eligibility" }; // "MEC",
+	private String listGatherPDFs[] = new String[] { "nationalservices.pdf","pluss.pdf", 
+			"quickreferences.pdf", " nationalservices.pdf",
+			"gathercue_card_non_clinicals.pdf" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +77,7 @@ public class LibraryActivity extends Activity {
 					b = false;
 					File file = new File(
 							Environment.getExternalStorageDirectory()
-									+ "/NigerianProjectFile/documents/quickreference.pdf");
+									+ "/NigerianProjectFile/documents/quickreferences.pdf");
 
 					if (file.exists()) {
 						Uri path = Uri.fromFile(file);
@@ -99,17 +97,51 @@ public class LibraryActivity extends Activity {
 						intent2.putExtra(
 								PdfViewerActivity.EXTRA_PDFFILENAME,
 								Environment.getExternalStorageDirectory()
-										+ "/NigerianProjectFile/documents/quickreference.pdf");
+										+ "/NigerianProjectFile/documents/quickreferences.pdf");
 						startActivity(intent2);
 					}
 					new WriteFile(LibraryActivity.this)
-							.CreateFile("Visited quickreference.pdf Libray page!!");
+							.CreateFile("Visited quickreferences.pdf Libray page!!");
 					break;
+					
+
 				case 1:
+					b = false;
+					File file11 = new File(
+							Environment.getExternalStorageDirectory()
+									+ "/NigerianProjectFile/documents/pluss.pdf");
+
+					if (file11.exists()) {
+						Uri path = Uri.fromFile(file11);
+						Intent intent = new Intent(Intent.ACTION_VIEW);
+						intent.setDataAndType(path, "application/pdf");
+						intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+						try {
+							startActivity(intent);
+						} catch (ActivityNotFoundException e) {
+							b = true;
+						}
+					}
+					if (b == true) {
+						Intent intent2 = new Intent(LibraryActivity.this,
+								Second.class);
+						intent2.putExtra(
+								PdfViewerActivity.EXTRA_PDFFILENAME,
+								Environment.getExternalStorageDirectory()
+										+ "/NigerianProjectFile/documents/pluss.pdf");
+						startActivity(intent2);
+					}
+					new WriteFile(LibraryActivity.this)
+							.CreateFile("Visited pluss.pdf Libray page!!");
+					break;
+						
+					
+				case 3:
 					b = false;
 					File file2 = new File(
 							Environment.getExternalStorageDirectory()
-									+ "/NigerianProjectFile/documents/ojtmanual.pdf");
+									+ "/NigerianProjectFile/documents/ojtmanuals.pdf");
 
 					if (file2.exists()) {
 						Uri path = Uri.fromFile(file2);
@@ -129,17 +161,17 @@ public class LibraryActivity extends Activity {
 						intent2.putExtra(
 								PdfViewerActivity.EXTRA_PDFFILENAME,
 								Environment.getExternalStorageDirectory()
-										+ "/NigerianProjectFile/documents/ojtmanual.pdf");
+										+ "/NigerianProjectFile/documents/ojtmanuals.pdf");
 						startActivity(intent2);
 					}
 					new WriteFile(LibraryActivity.this)
-							.CreateFile("Visited ojtmanual.pdf Libray page!!");
+							.CreateFile("Visited ojtmanuals.pdf Libray page!!");
 					break;
 				case 2:
 					b = false;
 					File files = new File(
 							Environment.getExternalStorageDirectory()
-									+ "/NigerianProjectFile/documents/nationalservice.pdf");
+									+ "/NigerianProjectFile/documents/nationalservices.pdf");
 
 					if (files.exists()) {
 						Uri path = Uri.fromFile(files);
@@ -159,18 +191,18 @@ public class LibraryActivity extends Activity {
 						intent3.putExtra(
 								PdfViewerActivity.EXTRA_PDFFILENAME,
 								Environment.getExternalStorageDirectory()
-										+ "/NigerianProjectFile/documents/nationalservice.pdf");
+										+ "/NigerianProjectFile/documents/nationalservices.pdf");
 						startActivity(intent3);
 					}
 					new WriteFile(LibraryActivity.this)
-							.CreateFile("Visited nationalservice.pdf Libray page!!");
+							.CreateFile("Visited nationalservices.pdf Libray page!!");
 
 					break;
-				case 3:
+				case 4:
 					b = false;
 					File filess = new File(
 							Environment.getExternalStorageDirectory()
-									+ "/NigerianProjectFile/documents/gathercue_card_non_clinical.pdf");
+									+ "/NigerianProjectFile/documents/gathercue_card_non_clinicals.pdf");
 
 					if (filess.exists()) {
 						Uri path = Uri.fromFile(filess);
@@ -190,17 +222,17 @@ public class LibraryActivity extends Activity {
 						intent4.putExtra(
 								PdfViewerActivity.EXTRA_PDFFILENAME,
 								Environment.getExternalStorageDirectory()
-										+ "/NigerianProjectFile/documents/gathercue_card_non_clinical.pdf");
+										+ "/NigerianProjectFile/documents/gathercue_card_non_clinicals.pdf");
 						startActivity(intent4);
 					}
 					new WriteFile(LibraryActivity.this)
-							.CreateFile("Visited gathercue_card_non_clinical.pdf Libray page!!");
+							.CreateFile("Visited gathercue_card_non_clinicals.pdf Libray page!!");
 					break;
-				case 4:
+				case 5:
 					b = false;
 					File file1 = new File(Environment
 							.getExternalStorageDirectory()
-							+ "/NigerianProjectFile/documents/faqs.pdf");
+							+ "/NigerianProjectFile/documents/faqss.pdf");
 
 					if (file1.exists()) {
 						Uri path = Uri.fromFile(file1);
@@ -220,14 +252,14 @@ public class LibraryActivity extends Activity {
 						intent5.putExtra(
 								PdfViewerActivity.EXTRA_PDFFILENAME,
 								Environment.getExternalStorageDirectory()
-										+ "/NigerianProjectFile/documents/faqs.pdf");
+										+ "/NigerianProjectFile/documents/faqss.pdf");
 						startActivity(intent5);
 					}
 					new WriteFile(LibraryActivity.this)
-							.CreateFile("Visited faqs.pdf Libray page!!");
+							.CreateFile("Visited faqss.pdf Libray page!!");
 
 					break;
-				case 5:
+				case 6:
 
 					boolean applanch = false;
 

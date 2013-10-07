@@ -30,40 +30,41 @@ import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
 
 public class PrefsActivity extends PreferenceActivity {
-	
-	public static final String TAG = PrefsActivity.class.getSimpleName();
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) { 
-		super.onCreate(savedInstanceState);
-		addPreferencesFromResource(R.xml.prefs); 
-		
-		ListPreference langsList = (ListPreference) findPreference(getString(R.string.prefs_language)); 
-		
-		List<String> entries = new ArrayList<String>();
-	    List<String> entryValues = new ArrayList<String>();
-	    
-	    Bundle bundle = this.getIntent().getExtras(); 
-        if(bundle != null) {
-        	@SuppressWarnings("unchecked")
-			ArrayList<Lang> langs = (ArrayList<Lang>) bundle.getSerializable("langs");
-        	for(Lang l: langs){
-        		if(!entryValues.contains(l.getLang())){
-	        		entryValues.add(l.getLang());
-	        		Locale loc = new Locale(l.getLang());
-	        		entries.add(loc.getDisplayLanguage(loc));
-        		}
-        	}
-        	
-        }
-        
-        final CharSequence[] entryCharSeq = entries.toArray(new CharSequence[entries.size()]);
-        final CharSequence[] entryValsChar = entryValues.toArray(new CharSequence[entryValues.size()]);
-        
-        langsList.setEntries(entryCharSeq);
-        langsList.setEntryValues(entryValsChar);
-	}
 
-	
+	public static final String TAG = PrefsActivity.class.getSimpleName();
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		addPreferencesFromResource(R.xml.prefs);
+
+		ListPreference langsList = (ListPreference) findPreference(getString(R.string.prefs_language));
+
+		List<String> entries = new ArrayList<String>();
+		List<String> entryValues = new ArrayList<String>();
+
+		Bundle bundle = this.getIntent().getExtras();
+		if (bundle != null) {
+			@SuppressWarnings("unchecked")
+			ArrayList<Lang> langs = (ArrayList<Lang>) bundle
+					.getSerializable("langs");
+			for (Lang l : langs) {
+				if (!entryValues.contains(l.getLang())) {
+					entryValues.add(l.getLang());
+					Locale loc = new Locale(l.getLang());
+					entries.add(loc.getDisplayLanguage(loc));
+				}
+			}
+
+		}
+
+		final CharSequence[] entryCharSeq = entries
+				.toArray(new CharSequence[entries.size()]);
+		final CharSequence[] entryValsChar = entryValues
+				.toArray(new CharSequence[entryValues.size()]);
+
+		langsList.setEntries(entryCharSeq);
+		langsList.setEntryValues(entryValsChar);
+	}
 
 }

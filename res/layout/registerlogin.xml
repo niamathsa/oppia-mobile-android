@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <openwave.nurhi.mobile.learning.application.Header
+        android:id="@+id/header"
+        style="@style/Header" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"           
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                style="@style/PageHeadingText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:text="Register/Login" />
+
+            <Button
+                android:id="@+id/register_btn1"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="40dp"              
+                android:text="@string/title_register" />
+
+            <Button
+                android:id="@+id/login_btn1"
+                style="@style/ButtonText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"               
+                android:text="@string/title_login" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

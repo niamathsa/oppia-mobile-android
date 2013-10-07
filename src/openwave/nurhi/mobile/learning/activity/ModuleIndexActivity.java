@@ -182,9 +182,9 @@ public class ModuleIndexActivity extends AppActivity {
 		Bundle tb = new Bundle();
 		// Handle item selection
 		switch (item.getItemId()) {
-		 case R.id.menu_about:
-			 new trackertask().execute();
-		 return true;
+//		 case R.id.menu_about:
+//			 new trackertask().execute();
+//		 return true;
 		// case R.id.menu_help:
 		// startActivity(new Intent(this, HelpActivity.class));
 		// return true;

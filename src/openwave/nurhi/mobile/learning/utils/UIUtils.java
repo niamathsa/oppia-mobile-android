@@ -56,8 +56,8 @@ public class UIUtils {
 		TextView badges = (TextView) act.findViewById(R.id.userbadges);
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(act.getBaseContext());
 		if (MobileLearning.isLoggedIn(act)) {
-			points.setVisibility(View.VISIBLE);
-			badges.setVisibility(View.VISIBLE);
+			points.setVisibility(View.GONE);
+			badges.setVisibility(View.GONE);
 			points.setText(String.valueOf(prefs.getInt(act.getString(R.string.prefs_points), 0)));
 			badges.setText(String.valueOf(prefs.getInt(act.getString(R.string.prefs_badges), 0)));
 

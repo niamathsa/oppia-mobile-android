@@ -6,11 +6,12 @@
         android:key="@string/prefs_language"
         android:title="@string/prefLanguage" >
     </ListPreference>
-
+<!-- 
     <CheckBoxPreference
         android:defaultValue="true"
         android:key="prefShowScheduleReminders"
         android:summary="@string/prefShowScheduleReminders_summary"
+       
         android:title="@string/prefShowScheduleReminders" />
 
     <ListPreference
@@ -20,7 +21,7 @@
         android:entryValues="@array/NoScheduleRemindersValues"
         android:key="prefNoScheduleReminders"
         android:summary="@string/prefNoScheduleReminders"
-        android:title="@string/prefNoScheduleReminders_summary" />
+        android:title="@string/prefNoScheduleReminders_summary" />   -->
 
     <PreferenceCategory android:title="@string/prefAdvanced" >
         <EditTextPreference

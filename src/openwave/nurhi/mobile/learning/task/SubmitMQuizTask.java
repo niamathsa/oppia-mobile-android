@@ -69,7 +69,10 @@ public class SubmitMQuizTask extends AsyncTask<Payload, Object, Payload> {
 				String url = HTTPConnectionUtils.createUrlWithCredentials(ctx, prefs, MobileLearning.MQUIZ_SUBMIT_PATH,true);
 				HttpPost httpPost = new HttpPost(url);
 				
-				StringEntity se = new StringEntity(tl.getContent());
+				StringEntity se = new StringEntity(tl.getContent().replaceAll(" \r\n", ""));
+				System.out.println("content guna **"+ tl.getContent().replace(" \r\n", ""));
+				
+				System.out.println("content guna2 **"+ tl.getContent().replace("[ \r\n]", ""));
                 se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
                 httpPost.setEntity(se);
                 
@@ -84,7 +87,8 @@ public class SubmitMQuizTask extends AsyncTask<Payload, Object, Payload> {
 				while ((s = buffer.readLine()) != null) {
 					responseStr += s;
 				}
-				
+				Log.d("report guna", responseStr);
+				System.out.println("guna data submit quiz report***" + responseStr);
 				switch (response.getStatusLine().getStatusCode()){
 					case 201: // submitted
 						DbHelper db = new DbHelper(ctx);

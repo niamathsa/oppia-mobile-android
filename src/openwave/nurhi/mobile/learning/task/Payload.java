@@ -32,6 +32,7 @@ public class Payload {
 	}
 	
 	public Payload(String url){
+		System.out.println("Url found*****" + url);
 		this.setUrl(url);		
 	}
 	
@@ -60,6 +61,8 @@ public class Payload {
 	}
 
 	public void setResultResponse(String resultResponse) {
+		System.out.println("resultResponse found ******" + resultResponse );
+		
 		this.resultResponse = resultResponse;
 	}
 

@@ -35,54 +35,70 @@ import android.widget.TextView;
 
 public class ModuleMetaPageActivity extends AppActivity {
 
-	public static final String TAG = ModuleMetaPageActivity.class.getSimpleName();
+	public static final String TAG = ModuleMetaPageActivity.class
+			.getSimpleName();
 	private Module module;
 	private SharedPreferences prefs;
 	private int pageid;
 	private ModuleMetaPage mmp;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_module_metapage);
 		this.drawHeader();
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		
+
 		Bundle bundle = this.getIntent().getExtras();
 		if (bundle != null) {
 			module = (Module) bundle.getSerializable(Module.TAG);
-			setTitle(module.getTitle(prefs.getString(getString(R.string.prefs_language), Locale.getDefault().getLanguage())));
+			setTitle(module.getTitle(prefs.getString(
+					getString(R.string.prefs_language), Locale.getDefault()
+							.getLanguage())));
 			pageid = (Integer) bundle.getSerializable(ModuleMetaPage.TAG);
 			mmp = module.getMetaPage(pageid);
 		}
-		
+
 		TextView titleTV = (TextView) findViewById(R.id.module_title);
-		String title = module.getTitle(prefs.getString(getString(R.string.prefs_language), Locale.getDefault().getLanguage())) + ": " + mmp.getLang(prefs.getString(getString(R.string.prefs_language), Locale.getDefault().getLanguage())).getContent();
+		String title = module.getTitle(prefs.getString(
+				getString(R.string.prefs_language), Locale.getDefault()
+						.getLanguage()))
+				+ ": "
+				+ mmp.getLang(
+						prefs.getString(getString(R.string.prefs_language),
+								Locale.getDefault().getLanguage()))
+						.getContent();
 		titleTV.setText(title);
-		
+
 		TextView versionTV = (TextView) findViewById(R.id.module_versionid);
 		BigDecimal big = new BigDecimal(module.getVersionId());
 		versionTV.setText(big.toString());
-		
+
 		TextView shortnameTV = (TextView) findViewById(R.id.module_shortname);
 		shortnameTV.setText(module.getShortname());
-		
+
 		WebView wv = (WebView) this.findViewById(R.id.metapage_webview);
-		String url = module.getLocation() + "/" +mmp.getLang(prefs.getString(getString(R.string.prefs_language), Locale.getDefault().getLanguage())).getLocation();
-		
+		String url = module.getLocation()
+				+ "/"
+				+ mmp.getLang(
+						prefs.getString(getString(R.string.prefs_language),
+								Locale.getDefault().getLanguage()))
+						.getLocation();
+
 		try {
-			String content =  "<html><head>";
+			String content = "<html><head>";
 			content += "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
 			content += "<link href='file:///android_asset/www/style.css' rel='stylesheet' type='text/css'/>";
 			content += "</head>";
 			content += FileUtils.readFile(url);
 			content += "</html>";
-			wv.loadDataWithBaseURL("file://" + module.getLocation() + "/", content, "text/html", "utf-8", null);
+			wv.loadDataWithBaseURL("file://" + module.getLocation() + "/",
+					content, "text/html", "utf-8", null);
 		} catch (IOException e) {
 			e.printStackTrace();
 			wv.loadUrl("file://" + url);
 		}
-	    
+
 	}
-	
+
 }

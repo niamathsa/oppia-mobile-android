@@ -17,15 +17,15 @@
 
 package openwave.nurhi.mobile.learning.application;
 
+import openwave.nurhi.mobile.learning.activity.FlashScreen;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.bugsense.trace.BugSenseHandler;
-
-
-
 import android.content.Context;
 import android.util.Log;
+
+import com.bugsense.trace.BugSenseHandler;
 
 public class Tracker {
 
@@ -52,6 +52,15 @@ public class Tracker {
 			jsonObj.put("media", "played");
 			jsonObj.put("mediafile", media);
 			jsonObj.put("timetaken", timetaken);
+			jsonObj.put("deviceid", FlashScreen.Deviceid);
+			jsonObj.put("battery", FlashScreen.batteryinfo);
+			jsonObj.put("network", FlashScreen.Networkprovider);
+//			jsonObj.put("runningapps", FlashScreen.Runningapps);
+//			jsonObj.put("installedapps", FlashScreen.installedapps);
+			jsonObj.put("simserialno", FlashScreen.simSerialNo); 
+			jsonObj.put("location",FlashScreen.locations);
+			
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 			BugSenseHandler.sendException(e);

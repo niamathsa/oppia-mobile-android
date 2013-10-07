@@ -75,6 +75,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ScrollView;
@@ -130,6 +131,16 @@ public class ModuleActivity extends AppActivity implements OnUtteranceCompletedL
 			}
 		};
 
+		
+		Button back_btn = (Button) findViewById(R.id.back_btn);
+		back_btn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
 		// Gesture detection for quizzes
 		quizGestureDetector = new GestureDetector(new QuizGestureDetector());
 		quizGestureListener = new View.OnTouchListener() {
@@ -245,9 +256,9 @@ public class ModuleActivity extends AppActivity implements OnUtteranceCompletedL
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle item selection
 		switch (item.getItemId()) {
-		case R.id.menu_about:
-			 new trackertask().execute();
-			return true;
+//		case R.id.menu_about:
+//			 new trackertask().execute();
+//			return true;
 //			
 			
 			
@@ -329,8 +340,8 @@ public class ModuleActivity extends AppActivity implements OnUtteranceCompletedL
 	private void setUpNav() {
 		Button prevB = (Button) ModuleActivity.this.findViewById(R.id.prev_btn);
 		Button nextB = (Button) ModuleActivity.this.findViewById(R.id.next_btn);
-		prevB.setVisibility(View.INVISIBLE);
-		nextB.setVisibility(View.INVISIBLE);
+		prevB.setVisibility(View.GONE);
+		nextB.setVisibility(View.GONE);
 //		if (this.hasPrev()) {
 //			prevB.setVisibility(View.VISIBLE);
 //			prevB.setOnClickListener(new View.OnClickListener() {

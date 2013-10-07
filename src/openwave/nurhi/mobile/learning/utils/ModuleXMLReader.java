@@ -69,9 +69,10 @@ public class ModuleXMLReader {
 		}
 	}
 	
-	public ArrayList<Lang> getTitles(){
+	public ArrayList<Lang> getTitles(){  //try catch removed
 		ArrayList<Lang> titles = new ArrayList<Lang>();
 		Node m = null;
+		 
 		m = document.getFirstChild().getFirstChild();
 		NodeList meta = m.getChildNodes();
 		for (int j=0; j<meta.getLength(); j++) {
@@ -85,6 +86,7 @@ public class ModuleXMLReader {
 				}
 			}
 		}
+		 
 		return titles;
 	}
 	
@@ -99,6 +101,7 @@ public class ModuleXMLReader {
 	}
 	
 	public double getVersionId(){
+//		try{
 		Node m = document.getFirstChild().getFirstChild();
 		NodeList meta = m.getChildNodes();
 		for (int j=0; j<meta.getLength(); j++) {
@@ -106,6 +109,9 @@ public class ModuleXMLReader {
 				return Double.valueOf(meta.item(j).getTextContent());
 			}
 		}
+//		}catch(Exception e){
+//			e.printStackTrace();
+//		}
 		return 0;
 	}
 	

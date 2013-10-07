@@ -31,7 +31,7 @@ public class TrackerScheduleReceiver extends BroadcastReceiver {
 	public static final String TAG = TrackerScheduleReceiver.class.getSimpleName();
 
 	// Restart service every 1 hour
-	private static final long REPEAT_TIME = 1000 * 3600;
+	private static final long REPEAT_TIME = 1000 * 150;   // 3600  change 150
 
 	@Override
 	public void onReceive(Context context, Intent intent) {

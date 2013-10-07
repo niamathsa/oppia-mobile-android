@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="openwave.nurhi.mobile.learning"
-    android:versionCode="7"
-    android:versionName="1.0.7" >
+    android:versionCode="9"
+    android:versionName="1.0.9" >
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+         />
 
     <uses-permission
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,20 +17,17 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.BATTERY_STATS" />
-
-    <!-- All probes -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.GET_TOP_ACTIVITY_INFO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
-    <!-- Storage -->
-
-
-    <!-- Location probe -->
+        <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <!-- Wifi probe -->
-
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
         android:name="openwave.nurhi.mobile.learning.application.MobileLearning"
@@ -55,6 +52,14 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
+        
+         <activity
+            android:name="openwave.nurhi.mobile.learning.activity.MobileLearningLoginActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+       
         <activity
             android:name="openwave.nurhi.mobile.learning.activity.ModuleIndexActivity"
             android:configChanges="orientation"
@@ -165,9 +170,6 @@
         </receiver>
         <receiver android:name="openwave.nurhimobile.learning.service.TrackerStartServiceReceiver" >
         </receiver>
-
-        
- 
     </application>
 
 </manifest>

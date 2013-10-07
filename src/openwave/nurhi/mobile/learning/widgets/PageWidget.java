@@ -189,6 +189,9 @@ public class PageWidget extends WidgetFactory {
 			String lang = prefs.getString(ctx.getString(R.string.prefs_language), Locale.getDefault().getLanguage());
 			obj.put("lang", lang);
 			obj.put("readaloud",readAloud);
+ 	 
+			
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 			BugSenseHandler.sendException(e);

@@ -56,13 +56,13 @@
 	
 	<string name="prefBackgroudDataConnect">Background activity tracker</string>
 	<string name="prefBackgroudDataConnect_summary">Send activity logs even when this application isn\'t running</string>
-	
+	<!--
 	<string name="prefShowScheduleReminders">Display suggested activities</string>
 	<string name="prefShowScheduleReminders_summary">Show which activities you are due to complete next</string>
 	
 	<string name="prefNoScheduleReminders">Number of suggested activities</string>
 	<string name="prefNoScheduleReminders_summary">How many suggested activities to display</string>
-	
+	  -->
 	<string name="notification_module_update_title">New course updates</string>
 	<string name="notification_module_update_text">Updates are available for your courses.</string>
 	
@@ -161,10 +161,10 @@
 	<string name="download_via_pc_title">Download Media Files</string>
 	<string name="download_via_pc_intro">Download each of the files below to your PC (use right click, save-as)</string>
 	<string name="download_via_pc_final">Once you have downloaded the files copy them to the \'%1$s\' directory on your phone SD card.</string>
-	
+	<!--  	-->
 	<string name="schedule_reminders">Suggested next activities:</string>
 	
-	
+
 	
 	
 	<string name="questn_1">What city do you currently work in?</string>
@@ -204,7 +204,7 @@
     <string name="questn_18">If you have received training who provided it?</string>
     <string name="questn_18_a">A: NURHI</string>
     <string name="questn_18_b">B: Other sources</string>
-    <string name="questn_9">How many times did you attend a NURHI sponsored training?</string>
+    <string name="questn_9">How many times did you attend NURHI sponsored training?</string>
     <string name="questn_10">What type of family planning methods are available at your current place of employment? (SELECT ALL THAT APPLY)</string>
     <string name="questn_10_a">A: Combined oral contraceptive pills</string>
     <string name="questn_10_b">B: Progestin only oral contraceptive pills</string>

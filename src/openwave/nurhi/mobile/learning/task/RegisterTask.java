@@ -173,8 +173,8 @@ public class RegisterTask extends AsyncTask<Payload, Object, Payload> {
             json.put("firstname",u.getFirstname()); //u.getFirstname()
             json.put("lastname",u.getLastname()); //u.getLastname()
             json.put("phoneno",u.getPhone());
-            json.put("city","hello city");          
-            json.put("state","hello state"); 
+            json.put("city",u.getCity());          
+            json.put("state",u.getstate()); 
             json.put("professional",u.getprofessional());
             json.put("town",u.gettown());
             json.put("country",u.getcountry());
@@ -187,7 +187,7 @@ public class RegisterTask extends AsyncTask<Payload, Object, Payload> {
             json.put("religion",u.getreligion());
             json.put("sex",u.getSex());
             json.put("age",u.getAge());
-            json.put("providedit","provid edit");  //u.getTrainning2()
+            json.put("providedit",u.getTrainning2());  //u.getTrainning2()
 			
 			
 			

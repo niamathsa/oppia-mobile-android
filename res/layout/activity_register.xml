@@ -292,7 +292,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText01"
+                android:id="@+id/edt_your_professiona_training"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -327,7 +327,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/edt_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -351,8 +351,8 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/editText2"
+            <Spinner
+                android:id="@+id/edt_states"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -363,7 +363,7 @@
                 android:inputType="text"
                 android:singleLine="true"
                 android:textColor="#000000" >
-            </EditText>
+            </Spinner>
 
             <TextView
                 android:id="@+id/textView115"
@@ -377,7 +377,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edtstatenew"
+                android:id="@+id/edt_country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -466,7 +466,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/edt_work_at_currently_spc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -491,8 +491,8 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/editText4"
+            <AutoCompleteTextView
+                android:id="@+id/edt_facility_where_you_currently_work"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -503,7 +503,7 @@
                 android:inputType="text"
                 android:singleLine="true"
                 android:textColor="#000000" >
-            </EditText>
+            </AutoCompleteTextView>
 
             <TextView
                 android:id="@+id/textView8"
@@ -517,7 +517,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/edt_location_of_the_facility"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -599,7 +599,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/edt_type_of_staff_are_you"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -688,7 +688,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText7"
+                android:id="@+id/edt_how_many_times_artend_nurhi_training"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -712,7 +712,7 @@
                 android:textSize="18sp" />
 
             <CheckBox
-                android:id="@+id/checkBox1"
+                android:id="@+id/checkbox1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -721,7 +721,7 @@
                 android:textColor="#FFFFFF" />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/checkbox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -730,7 +730,7 @@
                 android:textColor="#FFFFFF" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/checkbox3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -739,7 +739,7 @@
                 android:textColor="#FFFFFF" />
 
             <CheckBox
-                android:id="@+id/checkBox4"
+                android:id="@+id/checkbox4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -748,7 +748,7 @@
                 android:textColor="#FFFFFF" />
 
             <CheckBox
-                android:id="@+id/checkBox5"
+                android:id="@+id/checkbox5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -757,7 +757,7 @@
                 android:textColor="#FFFFFF" />
 
             <CheckBox
-                android:id="@+id/checkBox6"
+                android:id="@+id/checkbox6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -766,7 +766,7 @@
                 android:textColor="#FFFFFF" />
 
             <CheckBox
-                android:id="@+id/checkBox7"
+                android:id="@+id/checkbox7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -775,7 +775,7 @@
                 android:textColor="#FFFFFF" />
 
             <CheckBox
-                android:id="@+id/checkBox8"
+                android:id="@+id/checkbox8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -784,7 +784,7 @@
                 android:textColor="#FFFFFF" />
 
             <CheckBox
-                android:id="@+id/checkBox9"
+                android:id="@+id/checkbox9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -793,7 +793,7 @@
                 android:textColor="#FFFFFF" />
 
             <CheckBox
-                android:id="@+id/checkBox10"
+                android:id="@+id/checkbox10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -810,7 +810,8 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/questn_11"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="18sp" />
 
             <RadioGroup
                 android:id="@+id/radioGroup5"
@@ -940,7 +941,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText8"
+                android:id="@+id/edt_age"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"

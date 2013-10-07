@@ -27,20 +27,9 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.mime.MultipartEntity;
-import org.apache.http.entity.mime.content.ContentBody;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
+import openwave.nurhi.mobile.learning.R;
+import openwave.nurhi.mobile.learning.R.id;
 import openwave.nurhi.mobile.learning.adapter.ModuleListAdapter;
 import openwave.nurhi.mobile.learning.application.DbHelper;
 import openwave.nurhi.mobile.learning.application.MobileLearning;
@@ -59,8 +48,17 @@ import openwave.nurhi.mobile.learning.task.UpgradeManagerTask;
 import openwave.nurhi.mobile.learning.utils.UIUtils;
 import openwave.nurhi.mobile.learning.utils.UpgradeUtils;
 
-import openwave.nurhi.mobile.learning.R;
-import openwave.nurhi.mobile.learning.R.id;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.content.ContentBody;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -69,9 +67,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -91,12 +86,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-import openwave.nurhi.mobile.learning.widgets.MQuizWidget;
 
 import com.bugsense.trace.BugSenseHandler;
 import com.example.uploaddata.BaseUtill;
-
 import com.example.uploaddata.InternetConnections;
 import com.example.uploaddata.WebParser;
 
@@ -359,9 +351,9 @@ public class MobileLearningActivity extends AppActivity implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle item selection
 		switch (item.getItemId()) {
-		case R.id.menu_about:		 
-			new trackertask().execute();	 
-			return true;
+//		case R.id.menu_about:		 
+//			new trackertask().execute();	 
+//			return true;
 		case R.id.menu_download:
 			startActivity(new Intent(this, TagSelectActivity.class));
 			return true;
@@ -542,65 +534,7 @@ public class MobileLearningActivity extends AppActivity implements
 		Intent i = new Intent(MobileLearningActivity.this,
 				LibraryActivity.class);
 		startActivity(i);
-		//
-		// urlList = new ArrayList<String>();
-		//
-		// // fileList is Used to check the Folder is Exist or not in the SD
-		// Card
-		// // to perform Download From Assests
-		//
-		// // fileName is Used to Read The File From Sdcard to Show in the APP
-		// When
-		// // User Click the Corresponding Button
-		//
-		// fileList = new ArrayList<File>();
-		//
-		// /* 23 */fileName.add("mec_wheel.pdf");
-		//
-		// fileList.add(new File(Environment.getExternalStorageDirectory()
-		// + "/NigerianProjectFile/documents/mec_wheel.pdf"));
-		//
-		// /* 24 */fileName.add("gather_clinical_poster.pdf");
-		//
-		// fileList.add(new File(Environment.getExternalStorageDirectory()
-		// + "/NigerianProjectFile/documents/gather_clinical_poster.pdf"));
-		//
-		// /* 25 */fileName.add("gather_cue_card_clinical.pdf");
-		//
-		// fileList.add(new File(Environment.getExternalStorageDirectory()
-		// + "/NigerianProjectFile/documents/gather_cue_card_clinical.pdf"));
-		//
-		// /* 26 */fileName.add("gathercue_card_non_clinical.pdf");
-		//
-		// fileList.add(new File(
-		// Environment.getExternalStorageDirectory()
-		// + "/NigerianProjectFile/documents/gathercue_card_non_clinical.pdf"));
-		//
-		// /* 27 */fileName.add("faqs.pdf");
-		//
-		// fileList.add(new File(Environment.getExternalStorageDirectory()
-		// + "/NigerianProjectFile/documents/faqs.pdf"));
-		//
-		// fileName1 = new ArrayList<String>();
-		// fileList1 = new ArrayList<File>();
-		//
-		// try {
-		//
-		// input = new ArrayList<InputStream>();
-		//
-		// input.add(getAssets().open("mec_wheel.pdf")); // 23
-		// input.add(getAssets().open("gather_clinical_poster.pdf")); // 24
-		// input.add(getAssets().open("gather_cue_card_clinical.pdf")); // 25
-		// input.add(getAssets().open("gathercue_card_non_clinical.pdf")); // 26
-		// input.add(getAssets().open("faqs.pdf")); // 27
-		//
-		// input1 = new ArrayList<InputStream>();
-		//
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-		// new download_task().execute();
+	 
 	}
 
 	class download_task extends AsyncTask<String, String, String> {
