@@ -55,7 +55,9 @@ public class FlashScreen extends Activity {
 			Environment.getExternalStorageDirectory() + "/NigerianProjectFile");
 
 	private File direct = new File(Environment.getExternalStorageDirectory()
-			+ "/NigerianProjectFile/documents");
+			+ "/NigerianProjectFile/documents");     
+	
+	//commented ver 1.10.c
 
 	private File directVideo = new File(
 			Environment.getExternalStorageDirectory()
