@@ -30,14 +30,14 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 
-public class AppActivity extends Activity implements OnSharedPreferenceChangeListener {
-	
+public class AppActivity extends Activity implements
+		OnSharedPreferenceChangeListener {
+
 	public static final String TAG = AppActivity.class.getSimpleName();
-	
+
 	private Header header;
 	private UserMessage messages;
 	private ScheduleReminders reminders;
-	
 
 	public void drawHeader() {
 		try {
@@ -47,33 +47,32 @@ public class AppActivity extends Activity implements OnSharedPreferenceChangeLis
 			// do nothing
 		}
 	}
-	
-	
+
 	/**
 	 * @param title
 	 */
 	public void drawHeader(String title) {
 		try {
 			header = (Header) findViewById(R.id.header);
-			header.initHeader(this,title);
+			header.initHeader(this, title);
 		} catch (NullPointerException npe) {
 			// do nothing
 		}
 	}
-	
-	public Header getHeader(){
+
+	public Header getHeader() {
 		return this.header;
 	}
-	
-	public void updateHeader(){
+
+	public void updateHeader() {
 		try {
 			header.updateHeader(this);
 		} catch (Exception npe) {
 			// do nothing
 		}
 	}
-	
-	public void drawMessages(){
+
+	public void drawMessages() {
 		try {
 			messages = (UserMessage) findViewById(R.id.user_messages);
 			messages.initUserMessage();
@@ -81,19 +80,20 @@ public class AppActivity extends Activity implements OnSharedPreferenceChangeLis
 			// do nothing
 		}
 	}
-	
-	public void updateMessages(MessageFeed mf){
+
+	public void updateMessages(MessageFeed mf) {
 		messages.updateUserMessages(mf);
 	}
-	
-	public void stopMessages(){
+
+	public void stopMessages() {
 		messages.stopMessages();
 	}
-	
+
 	/**
 	 * @param activities
 	 */
-	public void drawReminders(ArrayList<openwave.nurhi.mobile.learning.model.Activity> activities){
+	public void drawReminders(
+			ArrayList<openwave.nurhi.mobile.learning.model.Activity> activities) {
 		try {
 			reminders = (ScheduleReminders) findViewById(R.id.schedule_reminders);
 			reminders.initSheduleReminders(activities);
@@ -102,12 +102,13 @@ public class AppActivity extends Activity implements OnSharedPreferenceChangeLis
 		}
 	}
 
-
-	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-		if(key.equalsIgnoreCase(getString(R.string.prefs_points)) || key.equalsIgnoreCase(getString(R.string.prefs_points))){
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+			String key) {
+		if (key.equalsIgnoreCase(getString(R.string.prefs_points))
+				|| key.equalsIgnoreCase(getString(R.string.prefs_points))) {
 			this.updateHeader();
 		}
-		
+
 	}
 
 }

@@ -13,7 +13,7 @@
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:textStyle="bold"
-        android:text="Nurhi_Ver_1.9c"
+        android:text="Nurhi_Ver_1.10"
         android:textColor="#ffffff" />
 
 </RelativeLayout>

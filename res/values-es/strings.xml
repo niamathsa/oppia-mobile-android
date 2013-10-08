@@ -35,7 +35,7 @@
  	<string name="widget_mquiz_results">Resultados</string>
  	<string name="widget_mquiz_results_intro">Su puntuación:</string>
  	<string name="widget_mquiz_results_score">%1$.0f%%</string>
- 	<string name="widget_mquiz_results_restart">Vuelva a pasar el test</string>
+<!-- 	<string name="widget_mquiz_results_restart">Vuelva a pasar el test</string>  -->
  	<string name="module_context_reset">Reajustar</string>
  	<string name="module_context_delete">Borrar</string>
  	<string name="module_context_reset_confirm">¿Está seguro de que desea restablecer este curso? Se eliminarán todos los registros de progreso para este curso.</string>

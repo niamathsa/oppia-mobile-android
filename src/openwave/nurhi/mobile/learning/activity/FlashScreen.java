@@ -49,14 +49,7 @@ import edu.mit.media.funf.probe.builtin.WifiProbe;
 public class FlashScreen extends Activity {
 
 	public static final String PIPELINE_NAME = "default";
-	private FunfManager funfManager;
-	private BasicPipeline pipeline;
-	private WifiProbe wifiProbe;
-	private SimpleLocationProbe locationProbe;
-	private CheckBox enabledCheckbox;
-	private Button archiveButton, scanNowButton;
-	private TextView dataCountView;
-	private Handler handler;
+ 
 
 	private File mainDirectory = new File(
 			Environment.getExternalStorageDirectory() + "/NigerianProjectFile");
@@ -106,40 +99,45 @@ public class FlashScreen extends Activity {
 		setContentView(R.layout.flashscreen);
 		createLibrary();
 
-		// try {
-		// File f = mainDirectory;
-		// deleteDirectory(f);
-		// System.out.println("done main nigerian");
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		//
-		// System.out.println("fail main nigerian");
-		// }
-		// try {
-		// File f = dirdigitalcampus;
-		// deleteDirectory(f);
-		// System.out.println("done main nigirian");
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// System.out.println("fail main digital campus");
-		// }
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(FlashScreen.this);
+		String version = prefs.getString("VerDelete","");
 		
+		if (version.equals("")){
+
+			 try {
+			 File f = mainDirectory;
+			 deleteDirectory(f);
+			 System.out.println("done main nigerian");
+			 } catch (Exception e) {
+			 e.printStackTrace();
+			
+			 System.out.println("fail main nigerian");
+			 }
+			 try {
+			 File f = dirdigitalcampus;
+			 deleteDirectory(f);
+			 System.out.println("done main nigirian");
+			 } catch (Exception e) {
+			 e.printStackTrace();
+			 System.out.println("fail main digital campus");
+			 }
+			  editor = prefs.edit();
+			 editor.putString("VerDelete", "done");
+			 editor.commit();
+		}
 		
-//		try{
-//		LatLong();
-//		}catch(Exception e){
-//			e.printStackTrace();
-//		}
+ 
 		new Handler().postDelayed(new Runnable() {
 
 			@Override
 			public void run() {
 				//
-				// Intent intent = new Intent(FlashScreen.this,
-				// MobileLearningActivity.class);
-				// startActivity(intent);
-				//
-				// finish();
+//				 Intent intent = new Intent(FlashScreen.this,
+//				 MobileLearningActivity.class);
+//				 startActivity(intent);
+//				
+//				 finish();
 
 				new BackgroundTask().execute();
 

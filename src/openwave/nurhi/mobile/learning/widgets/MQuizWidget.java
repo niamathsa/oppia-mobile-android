@@ -273,7 +273,7 @@ public class MQuizWidget extends WidgetFactory {
 		responsesLL.addView(score);
 		
 		Button restartBtn = new Button(this.ctx);
-		restartBtn.setText(((android.app.Activity) this.ctx).getString(R.string.widget_mquiz_results_restart));
+//		restartBtn.setText(((android.app.Activity) this.ctx).getString(R.string.widget_mquiz_results_restart));
 		restartBtn.setTextSize(20);
 		restartBtn.setTypeface(Typeface.DEFAULT_BOLD);
 		restartBtn.setOnClickListener(new View.OnClickListener() {
@@ -282,7 +282,7 @@ public class MQuizWidget extends WidgetFactory {
 			}
 		});
 		
-		responsesLL.addView(restartBtn);
+		//responsesLL.addView(restartBtn);
 	}
 
 	private void restart() {

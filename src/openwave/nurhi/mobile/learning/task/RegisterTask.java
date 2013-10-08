@@ -74,94 +74,13 @@ public class RegisterTask extends AsyncTask<Payload, Object, Payload> {
 		System.out.println("here getting method name" + url);
 		HttpPost httpPost = new HttpPost(url);
 		try {
-
-			// -------------------------------------
-			// >'username': bundle.data['username'],
-			// >'password': bundle.data['password'],
-			// >'password_again': bundle.data['passwordagain'],
-			// >'email': bundle.data['email'],
-			// >'phoneno': bundle.data['phoneno'],
-			// >'professional': bundle.data['professional'],
-			// >'town': bundle.data['town'],
-			// >'city': bundle.data['city'],
-			// >'country': bundle.data['country'],
-			// >'worktype': bundle.data['worktype'],
-			// >'currentlyworking': bundle.data['currentlyworking'],
-			// >'stafftype': bundle.data['stafftype'],
-			// >'familyplaning': bundle.data['familyplaning'],
-			// >'nurhitraining': bundle.data['nurhitraining'],
-			// >'education': bundle.data['education'],
-			// >'religion': bundle.data['religion'],
-			// >'sex': bundle.data['sex'],
-			// >'age': bundle.data['age'],
-			// >'first_name': bundle.data['firstname'],
-			// >'last_name': bundle.data['lastname']
-
+ 
 			// update progress dialog
 			publishProgress(ctx.getString(R.string.register_process));
 			Log.d(TAG, "Registering... " + u.getUsername());
 			// add post params
 			JSONObject json = new JSONObject();
-			
-			
-//			
-//			bundle.obj.first_name = first_name
-//		            bundle.obj.last_name = last_name
-//		            bundle.obj.phoneno = phoneno
-//		            bundle.obj.professional = professional
-			
-//		            bundle.obj.town = town
-			
-//		            bundle.obj.city = city
-//		            bundle.obj.state = state
-//		            bundle.obj.country = country
-			
-			
-//		            bundle.obj.worktype = worktype
-//		            bundle.obj.currentlyworking = currentlyworking
-//		            bundle.obj.stafftype = stafftype
-//		            bundle.obj.familyplaning = familyplaning
-			
-//		            bundle.obj.nurhitraining = nurhitraining
-//		            bundle.obj.education = education
-//		            bundle.obj.religion = religion
-//		            bundle.obj.sex = sex
-//		            bundle.obj.age = age
-//		            bundle.obj.providedit = providedit 
-//			
-			
-			
-			
-			
-			
-			
-		/*	
-			json.put("username", u.getUsername());
-			json.put("password", u.getPassword());
-			json.put("passwordagain", u.getPasswordAgain());
-			json.put("email", u.getEmail());
-		 
-			json.put("firstname", u.getFirstname()); // u.getFirstname()
-			json.put("lastname", u.getLastname()); // u.getLastname()
-			json.put("phoneno", u.getPhone());
-//			json.put("city", u.getCity());
-//			 json.put("state",u.getstate());
-			json.put("professional", u.getprofessional());
-			json.put("town", u.gettown());
-			json.put("country", u.getcountry());
-			json.put("worktype", u.getWorktype());
-			json.put("currentlyworking", u.getcurrentlyworking());
-			json.put("stafftype", u.getstafftype());
-			json.put("familyplaning", u.getfamilyplaning());
-			json.put("nurhitraining", u.getnurhitrainning());
-			json.put("education", u.geteducation());
-			json.put("religion", u.getreligion());
-			json.put("sex", u.getSex());
-			json.put("age", u.getAge());
-		
-//			json.put("providedit", u.getTrainning2());
-			
-			*/
+	 
 			
 			
 			
@@ -211,21 +130,7 @@ public class RegisterTask extends AsyncTask<Payload, Object, Payload> {
 			while ((s = buffer.readLine()) != null) {
 				responseStr += s;
 			}
-
-			
-
-//			try {
-//
-//				new WriteFile(ctx)
-//						.CreateFile("User Registraion Process Responce is::"+responseStr);
-//			
-//			}catch(Exception e){
-//				e.printStackTrace();
-//			}
-			// system.out.println()
-			Log.d("Hello2 ", "**" + responseStr);
-
-			Log.d("Hello3 ", "**" + response.getEntity().toString());
+ 
 			switch (response.getStatusLine().getStatusCode()) {
 			case 400: // unauthorised
 				payload.setResult(false);
